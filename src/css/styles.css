@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+*, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: PT Sans;
+  list-style: none;
+}
+
+.App {
+  position: relative;
+  color: #262626;
+}
+.App.dark {
+  color: #fff;
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  background: rgba(255, 255, 255, 0.782);
+  z-index: 20;
+  transition: background 0.2s ease-in-out;
+}
+.navbar.dark {
+  background: #010c2288;
+}
+.navbar .logo {
+  font-weight: 700;
+  font-size: 23px;
+}
+.navbar .logo span {
+  color: #66adf3;
+}
+.navbar .section-links {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+}
+.navbar .section-links .sec-link {
+  position: relative;
+  cursor: pointer;
+}
+.navbar .section-links .sec-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #66adf3;
+  border-radius: 3px;
+  transition: width ease-in-out 0.3s;
+}
+.navbar .section-links .sec-link.active::after {
+  width: 100%;
+}
+.navbar .section-links .theme {
+  margin-left: 50px;
+  margin-top: 4px;
+  color: orange;
+}
+
+.home {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #fff;
+  transition: background 0.2s ease-in-out;
+}
+.home.dark {
+  background: #010c22;
+}
+.home figure {
+  position: relative;
+  margin-top: -20px;
+}
+.home figure .moyo-img {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: #66adf343 solid 15px;
+  transition: border 0.3s ease-in-out;
+}
+.home figure .moyo-img:hover {
+  border-width: 19px;
+}
+.home div .intro-text {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+}
+.home div .intro-text span {
+  color: #66adf3;
+}
+.home .arrow {
+  width: 30px;
+  height: 30px;
+  background: #66adf3;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff !important;
+  position: absolute;
+  bottom: 30px;
+  animation: animate 1s ease infinite alternate;
+}
+
+@keyframes animate {
+  0% {
+    bottom: 30px;
+  }
+  100% {
+    bottom: 20px;
+  }
+}
+.socials {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 10%;
+  left: 4%;
+}
+.socials-icon {
+  margin-bottom: 40px;
+  cursor: pointer;
+  width: 20px !important;
+  color: #26262677;
+}
+.socials-icon:hover {
+  color: #66adf3;
+}
+
+.about {
+  padding: 170px 120px;
+  background: #fff;
+  transition: background 0.2s ease-in-out;
+}
+.about.dark {
+  background: #010c22;
+}
+.about h1 {
+  position: relative;
+  display: inline;
+}
+.about h1::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 2px;
+  background: #66adf343;
+  left: 110%;
+  top: 50%;
+}
+.about-container {
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin-top: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.about-container img {
+  width: 50%;
+  border-radius: 5px;
+  border-left: 8px solid #66adf3;
+  border-right: 8px solid #66adf3;
+}
+.about-container-text {
+  width: 45%;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.works {
+  padding: 100px 120px;
+  background: #fff;
+  transition: background 0.2s ease-in-out;
+}
+.works.dark {
+  background: #010c22;
+}
+.works h1 {
+  float: right;
+  position: relative;
+  display: inline;
+}
+.works h1::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 2px;
+  background: #66adf343;
+  left: 110%;
+  top: 50%;
+}
+.works h1::after {
+  left: -320px;
+}
+.works .work-videos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+  margin-top: 70px;
+}
+.works .work-videos .vid {
+  border: 5px solid #66adf32a;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */

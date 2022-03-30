@@ -3,9 +3,10 @@ import moyo from '../images/moyo.jpg'
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 
 interface Props {
-    theme:string
+    theme:string;
+    scroll:() => void;
 }
-const Home:React.FC<Props> = ({theme}) => {
+const Home:React.FC<Props> = ({theme, scroll}) => {
     const [style, setStyle] = useState("")
     useEffect(()=> {
         if(theme === "dark"){
@@ -22,7 +23,7 @@ const Home:React.FC<Props> = ({theme}) => {
         <div>
             <p className='intro-text'>👋 Hi! I'm Moyosore, a <span>Broadcasting and <br />Communications Professional</span></p>
         </div>
-        <div className="arrow">
+        <div className="arrow" onClick={scroll}>
             <KeyboardArrowDownRoundedIcon />
             </div>
     </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 // import vid from '/videos/aviation.mp4'
 interface Props {
     theme:string
@@ -28,13 +29,8 @@ const Works:React.FC<Props> = ({theme}) => {
             <video controls width={500} height="300" className='vid'>
                 <source src={"/videos/voiceoverchallenge.mp4"} type='video/mp4' />
             </video>
-            <video controls width={500} height="300" className='vid'>
-                <source src={"/videos/lagosfashionhub.mp4"} type='video/mp4' />
-            </video>
-            <video controls width={500} height="300" className='vid'>
-                <source src={"/videos/election.mp4"} type='video/mp4' />
-            </video>
         </div>
+        <Link to="/works"><button className="view-all">View All</button></Link>
     </div>
   )
 }

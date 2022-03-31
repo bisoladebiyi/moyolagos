@@ -31,7 +31,7 @@ const Navbar: React.FC<Props> = ({theme, set, contactRef}) => {
         setThemeIcon(!themeIcon)
     }
     const contact = () => {
-        navigate("/")
+        navigate("/#contact")
         contactRef?.current?.scrollIntoView({ behavior: "smooth" });
       }
   return (

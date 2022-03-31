@@ -25,7 +25,7 @@ const BlogDetails: React.FC<Props> = ({ style }) => {
     return res;
   };
   return (
-    <div className="blogDetails">
+    <div className={`blogDetails ${style}`}>
       <p className="title">{data?.data()?.title}</p>
       <div
       className="description"

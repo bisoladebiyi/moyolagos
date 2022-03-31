@@ -45,7 +45,7 @@ const HomePage: React.FC<Props> = ({ theme, setTheme, style, contactRef }) => {
       </div>
       <Works theme={theme} />
       <Blogs theme={theme} posts={posts} />
-      <div ref={contactRef}>
+      <div ref={contactRef} id="contact">
       <Contact theme={theme} />
       </div>
       <Footer theme={theme} />

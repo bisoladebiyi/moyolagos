@@ -18,9 +18,9 @@ const SocialLinks:React.FC<Props> = ({theme}) => {
   }, [theme]);
   return (
     <div className={`socials ${style}`}>
-        <TwitterIcon className='socials-icon' />
-        <InstagramIcon className='socials-icon' />
-        <LinkedInIcon className='socials-icon' />
+        <a href="https://twitter.com/Moyolagos" target="_blank" rel="noreferrer"><TwitterIcon className='socials-icon' /></a>
+        <a href='https://www.instagram.com/moyolagos/' target="_blank" rel="noreferrer"><InstagramIcon className='socials-icon' /></a>
+        <a href="https://www.linkedin.com/in/moyosore-adebiyi-75165b88/" target={"_blank"} rel="noreferrer"><LinkedInIcon className='socials-icon' /></a>
     </div>
   )
 }

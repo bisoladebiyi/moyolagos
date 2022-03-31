@@ -110,9 +110,16 @@ a {
         }
       }
     }
+    
+  }
+  .hamburger{
+    all: unset;
+    display: none;
   }
 }
-
+.side-menu{
+  display: none;
+}
 // home
 .home {
   position: relative;
@@ -245,8 +252,11 @@ a {
     grid-gap: 40px;
     margin-top: 70px;
     .vid {
-      border: 5px solid #66adf32a;
+      box-sizing: content-box;
+      border: 5px solid #66adf3bb;
       border-radius: 10px;
+      background: $col-dark;
+      
     }
   }
   .view-all {
@@ -289,6 +299,8 @@ a {
       box-shadow: -1px 2px 40px -4px rgba(0, 0, 0, 0.193);
       -webkit-box-shadow: -1px 2px 40px rgba(0, 0, 0, 0.193);
       -moz-box-shadow: -1px 2px 40px -4px rgba(0, 0, 0, 0.193);
+      min-height: 235px;
+      max-height: 300px;
       cursor: pointer;
       &-title {
         font-size: 18px;
@@ -440,6 +452,13 @@ a {
   .navbar .section-links {
     display: none;
   }
+  .navbar  .hamburger{
+    display: flex;
+    cursor: pointer;
+    .icon{
+      transform: scale(1.1);
+    }
+  }
   .home div .intro-text {
     font-size: 28px;
   }
@@ -483,6 +502,61 @@ a {
     .description span{
       font-size: 16px !important;
       line-height: 25px !important;
+    }
+  }
+  .side-menu{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 30;
+    background: #fff;
+    place-items: center;
+    text-align: center;
+    @include backgroundTransition;
+    button{
+      all: unset;
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      cursor: pointer;
+      .close{
+        transform: scale(1.1);
+      }
+    }
+    .sec-link{
+      margin-bottom: 30px;
+      font-size: 20px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background: $col-blue;
+        border-radius: 3px;
+        transition: width ease-in-out 0.3s;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+    .theme {
+      cursor: pointer;
+      .sunIcon {
+        color: orange;
+        &:hover {
+          color: rgba(255, 166, 0, 0.823);
+        }
+      }
+      .moonIcon {
+        color: #3261bf;
+        &:hover {
+          color: #3261bfb4;
+        }
+      }
     }
   }
 

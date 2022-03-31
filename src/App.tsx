@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Navbar from "./components/navbar";
+import SideMenu from "./components/sideMenu";
 import SocialLinks from "./components/socialLinks";
 import "./css/styles.css";
 import BlogPage from "./pages/blog";
@@ -15,6 +16,7 @@ function App() {
   const [theme, setTheme] = useState("light");
   const [style, setStyle] = useState("");
   const contactRef = useRef<HTMLDivElement>(null);
+  const [showMenu, setShowMenu] = useState<boolean>(false)
 
   useEffect(() => {
     if (theme === "dark") {
@@ -24,12 +26,17 @@ function App() {
     }
   }, [theme]);
 
+  const menuToggle =()=> {
+    setShowMenu(!showMenu)
+  }
+
 
 
   return (
     <BrowserRouter>
     <div className={`App ${style}`}>
-    <Navbar theme={theme} set={setTheme} contactRef={contactRef} />
+    {showMenu &&     <SideMenu theme={theme} style={style} setTheme={setTheme} menu={menuToggle} />}
+    <Navbar theme={theme} set={setTheme} contactRef={contactRef} menu={menuToggle} />
       <Routes>
       <Route path="/" element={<HomePage theme={theme} style={style} setTheme={setTheme} contactRef={contactRef} />} />
       <Route path="/works" element={<WorksPage theme={theme} style={style} />} />

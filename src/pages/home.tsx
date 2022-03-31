@@ -3,14 +3,11 @@ import About from "../components/about";
 import Blogs from "../components/blogs";
 import Footer from "../components/footer";
 import Home from "../components/home";
-import Navbar from "../components/navbar";
 import Works from "../components/works";
 import {
   collection,
   DocumentData,
   onSnapshot,
-  orderBy,
-  query,
   QuerySnapshot,
 } from "firebase/firestore";
 import { db } from "../firebase";

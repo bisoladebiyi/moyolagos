@@ -30,11 +30,11 @@ const SideMenu:React.FC<Props> = ({ theme, setTheme, style, menu}) => {
         </button>
         <div className='side-menu-links'>
         <ul>
-                <Link to="/"><li className="sec-link">Home</li></Link>
-                <li className="sec-link">About</li>
-                <Link to={"/works"}><li className="sec-link">Works</li></Link>
-                <Link to="/blog"><li className="sec-link">Blog</li></Link>
-                <li className="sec-link">Contact</li>
+                <Link to="/"><li className="sec-link" onClick={menu}>Home</li></Link>
+                <li className="sec-link" onClick={menu}>About</li>
+                <Link to={"/works"}><li className="sec-link" onClick={menu}>Works</li></Link>
+                <Link to="/blog"><li className="sec-link" onClick={menu}>Blog</li></Link>
+                <li className="sec-link" onClick={menu}>Contact</li>
                 <div className='theme' onClick={changeTheme}>
                     {themeIcon ? <DarkModeOutlinedIcon className="moonIcon" /> : <LightModeOutlinedIcon className="sunIcon" />}
                     

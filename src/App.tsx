@@ -1,15 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Navbar from "./components/navbar";
 import SideMenu from "./components/sideMenu";
 import SocialLinks from "./components/socialLinks";
 import "./css/styles.css";
 import BlogPage from "./pages/blog";
 import BlogDetails from "./pages/blogDetails";
-
 import HomePage from "./pages/home";
 import WorksPage from "./pages/works";
+// import smoothscroll from 'smoothscroll-polyfill';
 
 
 function App() {
@@ -28,6 +27,7 @@ function App() {
 
   const menuToggle =()=> {
     setShowMenu(!showMenu)
+    console.log("clicked")
   }
 
 
@@ -50,5 +50,7 @@ function App() {
     
   );
 }
+
+// smoothscroll.polyfill();
 
 export default App;

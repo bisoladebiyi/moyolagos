@@ -23,7 +23,7 @@ const About:React.FC<Props> = ({theme}) => {
           Moyosore Adebiyi is seasoned broadcasting and communications
           professional with over 7 years experience below his belt. He has
           worked as a writer, content creator and presenter for Inspiration FM
-          Lagos, Biscon Commmunications (TV/Magazine/Ads), Avalon Daily and
+          Lagos, Biscon Commmunications (TV/Magazine/Ads), Avalon Daily, Canary Nigeria and
           Afrotourism.
           <br />
           <br />

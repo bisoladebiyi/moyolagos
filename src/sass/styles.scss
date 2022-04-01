@@ -251,12 +251,18 @@ a {
     grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
     margin-top: 70px;
+    div .caption{
+      text-align: center;
+      font-size: 14px;
+      font-style: italic;
+      color: #888888;
+      font-weight: 500;
+      margin-top: 5px;
+    }
     .vid {
-      box-sizing: content-box;
       border: 5px solid #66adf3bb;
       border-radius: 10px;
       background: $col-dark;
-      
     }
   }
   .view-all {
@@ -427,7 +433,7 @@ a {
   .works .work-videos {
     display: block;
     text-align: center;
-    .vid:not(:last-child) {
+    div:not(:last-child) {
       margin-bottom: 30px;
     }
   }

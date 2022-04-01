@@ -17,18 +17,32 @@ const Works:React.FC<Props> = ({theme}) => {
     <div className={`works ${style}`}>
         <h1 className="works-title">Works</h1>
         <div className="work-videos">
+            <div>
             <video controls width={500} height="300" className='vid'>
                 <source src={"/videos/lekkileisure.mp4"} type='video/mp4' />
             </video>
+            <p className='caption'>Scripted, voiced and presented by Moyosore Adebiyi</p>
+            </div>
+            <div>
+
             <video controls width={500} height="300" className='vid'>
                 <source src={"/videos/onthespot.mp4"} type='video/mp4' />
             </video>
-            <video controls width={500} height="300" className='vid'>
+            <p className='caption'>Scripted and Voiced by Moyosore Adebiyi</p>
+            </div>
+          <div>
+          <video controls width={500} height="300" className='vid'>
                 <source src={"/videos/marriage.mp4"} type='video/mp4' />
             </video>
+            <p className='caption'>Scripted and Voiced by Moyosore Adebiyi</p>
+          </div>
+            <div>
             <video controls width={500} height="300" className='vid'>
                 <source src={"/videos/voiceoverchallenge.mp4"} type='video/mp4' />
             </video>
+            <p className='caption'>Scripted and Voiced by Moyosore Adebiyi</p>
+            </div>
+           
         </div>
         <Link to="/works"><button className="view-all">View All</button></Link>
     </div>

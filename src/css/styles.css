@@ -252,8 +252,15 @@ a {
   grid-gap: 40px;
   margin-top: 70px;
 }
+.works .work-videos div .caption {
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: #888888;
+  font-weight: 500;
+  margin-top: 5px;
+}
 .works .work-videos .vid {
-  box-sizing: content-box;
   border: 5px solid #66adf3bb;
   border-radius: 10px;
   background: #262626;
@@ -446,7 +453,7 @@ a {
     display: block;
     text-align: center;
   }
-  .works .work-videos .vid:not(:last-child) {
+  .works .work-videos div:not(:last-child) {
     margin-bottom: 30px;
   }
 

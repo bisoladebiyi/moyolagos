@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { useNavigate } from "react-router";
 
 interface Props {
@@ -11,10 +12,9 @@ interface Props {
     contactRef:React.RefObject<HTMLDivElement>;
     menu:()=>void
 }
-const Navbar: React.FC<Props> = ({theme, set, contactRef, menu}) => {
+const Navbar: React.FC<Props> = ({theme, set, menu}) => {
     const [style, setStyle] = useState("")
     const [themeIcon, setThemeIcon] = useState(true)
-    const navigate = useNavigate()
     useEffect(()=> {
         if(theme === "dark"){
             setStyle("dark")
@@ -32,19 +32,16 @@ const Navbar: React.FC<Props> = ({theme, set, contactRef, menu}) => {
         }
         setThemeIcon(!themeIcon)
     }
-    const contact = () => {
-        navigate("/#contact")
-        contactRef?.current?.scrollIntoView({ behavior: "smooth" });
-      }
+
   return (
     <div className={`navbar ${style}`}>
        <Link to="/"><div className="logo"><span>moyo</span>lagos</div></Link> 
         <ul className="section-links">
                 <Link to="/" onClick={menu}><li className="sec-link" onClick={menu}>Home</li></Link>
-                <li className="sec-link" onClick={menu}>About</li>
+                <Link to="/#about"><li className="sec-link" onClick={menu}>About</li></Link>
                 <Link to={"/works"}><li className="sec-link" onClick={menu}>Works</li></Link>
                 <Link to="/blog"><li className="sec-link" onClick={menu}>Blog</li></Link>
-                <li className="sec-link" onClick={menu}>Contact</li>
+                <Link to="/#contact" onClick={menu}><li className="sec-link">Contact</li></Link>
                 <div className='theme' onClick={changeTheme}>
                     {themeIcon ? <DarkModeOutlinedIcon className="moonIcon" /> : <LightModeOutlinedIcon className="sunIcon" />}
                     

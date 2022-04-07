@@ -32,7 +32,7 @@ const HomePage: React.FC<Props> = ({ theme, setTheme, style, contactRef }) => {
   }, []);
   useEffect(()=> {
     homeRef?.current?.scrollIntoView({ behavior: "smooth" });
-  })
+  },[])
   return (
     <div className={`App ${style}`} ref={homeRef}>
       {" "}
@@ -43,7 +43,7 @@ const HomePage: React.FC<Props> = ({ theme, setTheme, style, contactRef }) => {
       <Works theme={theme} />
       <Blogs theme={theme} posts={posts} />
       <div ref={contactRef} id="contact">
-      <Contact theme={theme} />
+      <Contact theme={theme} ref={contactRef} />
       </div>
       <Footer theme={theme} />
     </div>

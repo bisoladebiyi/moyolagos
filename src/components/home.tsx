@@ -21,7 +21,7 @@ const Home:React.FC<Props> = ({theme, scroll}) => {
         <img className='moyo-img' src={moyo} alt="" />
         </figure>
         <div>
-            <p className='intro-text'>👋 Hi! I'm Moyosore, a <span>Broadcasting and <br />Communications Professional</span></p>
+            <p className='intro-text'>👋 Hi! I'm Moyosore, a <span> Writer, Broadcaster,<br /> and Content developer</span></p>
         </div>
         <div className="arrow" onClick={scroll}>
             <KeyboardArrowDownRoundedIcon />

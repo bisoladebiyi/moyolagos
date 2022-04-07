@@ -15,7 +15,7 @@ const About:React.FC<Props> = ({theme}) => {
         }
     },[theme])
   return (
-    <div className={`about ${style}`}>
+    <div className={`about ${style}`} id="about">
       <h1>About Moyo</h1>
       <div className="about-container">
           <img src={moyo2} alt="" />

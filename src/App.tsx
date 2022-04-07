@@ -8,7 +8,9 @@ import BlogPage from "./pages/blog";
 import BlogDetails from "./pages/blogDetails";
 import HomePage from "./pages/home";
 import WorksPage from "./pages/works";
-// import smoothscroll from 'smoothscroll-polyfill';
+import { polyfill } from "seamless-scroll-polyfill";
+
+
 
 
 function App() {
@@ -51,6 +53,6 @@ function App() {
   );
 }
 
-// smoothscroll.polyfill();
+polyfill();
 
 export default App;

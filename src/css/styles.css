@@ -190,16 +190,7 @@ a {
 }
 .about h1 {
   position: relative;
-  display: inline;
-}
-.about h1::after {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 2px;
-  background: #66adf343;
-  left: 110%;
-  top: 50%;
+  display: block;
 }
 .about-container {
   display: flex;
@@ -230,18 +221,9 @@ a {
   background: #010916;
 }
 .works h1 {
-  float: right;
+  text-align: right;
   position: relative;
-  display: inline;
-}
-.works h1::after {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 2px;
-  background: #66adf343;
-  left: 110%;
-  top: 50%;
+  display: block;
 }
 .works h1::after {
   left: -320px;
@@ -284,25 +266,22 @@ a {
 }
 
 .blogs {
-  padding: 120px 120px;
+  padding: 80px 120px;
   background: #fff;
   transition: background 0.2s ease-in-out;
+}
+.blogs.page {
+  padding: 120px 0;
+}
+.blogs.page h1 {
+  text-align: left;
 }
 .blogs.dark {
   background: #010916;
 }
 .blogs h1 {
   position: relative;
-  display: inline;
-}
-.blogs h1::after {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 2px;
-  background: #66adf343;
-  left: 110%;
-  top: 50%;
+  display: block;
 }
 .blogs .blog {
   display: grid;
@@ -467,6 +446,9 @@ a {
   .blogDetails .description span {
     font-size: 16px !important;
     line-height: 25px !important;
+  }
+  .blogDetails .description span p {
+    text-align: justify !important;
   }
 }
 @media (max-width: 800px) {

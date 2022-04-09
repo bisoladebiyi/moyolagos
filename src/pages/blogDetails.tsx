@@ -33,7 +33,7 @@ const BlogDetails: React.FC<Props> = ({ style }) => {
           __html: data?.data()?.description,
         }}
       ></div>
-      <Link to="/blog"><button>View All Posts</button></Link>
+      <Link to="/works"><button>Go Back To Works</button></Link>
     </div>
   );
 };

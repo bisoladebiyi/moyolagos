@@ -17,19 +17,16 @@ interface Props {
   theme: string;
   setTheme: React.Dispatch<React.SetStateAction<string>>;
   style:string;
-  contactRef: React.RefObject<HTMLDivElement>
+  contactRef: React.RefObject<HTMLDivElement>;
+  posts: QuerySnapshot<DocumentData> | undefined
 }
-const HomePage: React.FC<Props> = ({ theme, setTheme, style, contactRef }) => {
-  const [posts, setPosts] = useState<QuerySnapshot<DocumentData>>();
+const HomePage: React.FC<Props> = ({ theme, setTheme, style, contactRef, posts }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const homeRef = useRef<HTMLDivElement>(null);
   const scrollDown = () => {
     scrollRef?.current?.scrollIntoView({ behavior: "smooth" });
   };
-  useEffect(() => {
-    onSnapshot(collection(db, "posts"), (snapshot) => setPosts(snapshot));
-    console.log(posts);
-  }, []);
+ 
   useEffect(()=> {
     homeRef?.current?.scrollIntoView({ behavior: "smooth" });
   },[])

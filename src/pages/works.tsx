@@ -1,11 +1,14 @@
+import { DocumentData, QuerySnapshot } from "firebase/firestore";
 import React, { useEffect, useRef, useState } from "react";
+import Blogs from "../components/blogs";
 
 interface Props {
   theme: string;
   style: string;
+  posts: QuerySnapshot<DocumentData> | undefined
 }
 
-const WorksPage: React.FC<Props> = ({ theme, style }) => {
+const WorksPage: React.FC<Props> = ({ theme, style, posts }) => {
   const worksRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     worksRef?.current?.scrollIntoView({ behavior: "smooth" });
@@ -69,6 +72,8 @@ const WorksPage: React.FC<Props> = ({ theme, style }) => {
           </p>
         </div>
       </div>
+      <Blogs posts={posts} page={true} theme={theme} />
+    
     </div>
   );
 };

@@ -12,16 +12,7 @@ $col-dark: #262626;
 $col-blue: #66adf3;
 @mixin title {
   position: relative;
-  display: inline;
-  &::after {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 2px;
-    background: #66adf343;
-    left: 110%;
-    top: 50%;
-  }
+  display: block;
 }
 @mixin backgroundTransition {
   transition: background 0.2s ease-in-out;
@@ -240,7 +231,7 @@ a {
   background: #fff;
   @include backgroundTransition;
   h1 {
-    float: right;
+    text-align: right;
     @include title;
     &::after {
       left: -320px;
@@ -286,8 +277,14 @@ a {
 
 // blogs
 .blogs {
-  padding: 120px 120px;
+  padding: 80px 120px;
   background: #fff;
+  &.page{
+      padding: 120px 0;
+      h1{
+        text-align: left
+      }
+  }
 
   @include backgroundTransition;
   h1 {
@@ -299,6 +296,7 @@ a {
     grid-auto-rows: 1fr;
     grid-gap: 40px;
     margin-top: 30px;
+
     &-card {
       padding: 20px;
       border-radius: 10px;
@@ -445,6 +443,10 @@ a {
     .description span{
       font-size: 16px !important;
       line-height: 25px !important;
+      p{
+        text-align: justify !important;
+      }
+      
     }
   }
 }

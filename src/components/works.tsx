@@ -44,7 +44,6 @@ const Works:React.FC<Props> = ({theme}) => {
             </div>
            
         </div>
-        <Link to="/works"><button className="view-all">View All</button></Link>
     </div>
   )
 }

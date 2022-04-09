@@ -4,11 +4,12 @@ import Navbar from "./components/navbar";
 import SideMenu from "./components/sideMenu";
 import SocialLinks from "./components/socialLinks";
 import "./css/styles.css";
-import BlogPage from "./pages/blog";
 import BlogDetails from "./pages/blogDetails";
 import HomePage from "./pages/home";
 import WorksPage from "./pages/works";
 import { polyfill } from "seamless-scroll-polyfill";
+import { collection, DocumentData, onSnapshot, QuerySnapshot } from "firebase/firestore";
+import { db } from "./firebase";
 
 
 
@@ -18,6 +19,7 @@ function App() {
   const [style, setStyle] = useState("");
   const contactRef = useRef<HTMLDivElement>(null);
   const [showMenu, setShowMenu] = useState<boolean>(false)
+  const [posts, setPosts] = useState<QuerySnapshot<DocumentData>>();
 
   useEffect(() => {
     if (theme === "dark") {
@@ -26,6 +28,9 @@ function App() {
       setStyle("");
     }
   }, [theme]);
+  useEffect(()=> {
+    onSnapshot(collection(db, "posts"), (snapshot) => setPosts(snapshot));
+  },[])
 
   const menuToggle =()=> {
     setShowMenu(!showMenu)
@@ -40,10 +45,9 @@ function App() {
     {showMenu &&     <SideMenu theme={theme} style={style} setTheme={setTheme} menu={menuToggle} />}
     <Navbar theme={theme} set={setTheme} contactRef={contactRef} menu={menuToggle} />
       <Routes>
-      <Route path="/" element={<HomePage theme={theme} style={style} setTheme={setTheme} contactRef={contactRef} />} />
-      <Route path="/works" element={<WorksPage theme={theme} style={style} />} />
-      <Route path="/blog" element={<BlogPage style={style} />} />
-      <Route path="/blog/:id" element={<BlogDetails style={style} />} />
+      <Route path="/" element={<HomePage theme={theme} style={style} setTheme={setTheme} contactRef={contactRef} posts={posts} />} />
+      <Route path="/works" element={<WorksPage theme={theme} style={style} posts={posts} />} />
+      <Route path="/writings/:id" element={<BlogDetails style={style} />} />
       </Routes>
       
       <SocialLinks theme={theme} />

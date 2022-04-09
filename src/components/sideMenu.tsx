@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
@@ -31,10 +31,9 @@ const SideMenu:React.FC<Props> = ({ theme, setTheme, style, menu}) => {
         <div className='side-menu-links'>
         <ul>
                 <Link to="/"><li className="sec-link" onClick={menu}>Home</li></Link>
-                <li className="sec-link" onClick={menu}>About</li>
+                <Link to="/#about" onClick={menu}><li className="sec-link">About</li></Link>
                 <Link to={"/works"}><li className="sec-link" onClick={menu}>Works</li></Link>
-                <Link to="/blog"><li className="sec-link" onClick={menu}>Blog</li></Link>
-                <li className="sec-link" onClick={menu}>Contact</li>
+                <Link  to="/#contact" onClick={menu}><li className="sec-link">Contact</li></Link>
                 <div className='theme' onClick={changeTheme}>
                     {themeIcon ? <DarkModeOutlinedIcon className="moonIcon" /> : <LightModeOutlinedIcon className="sunIcon" />}
                     

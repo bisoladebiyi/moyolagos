@@ -19,9 +19,9 @@ const Works:React.FC<Props> = ({theme, posts}) => {
     },[theme])
   return (
     <div className={`works ${style}`}>
-        <Broadcasting page={false} />
         <ContentDevelopment />
         <Blogs posts={posts} theme={theme} />
+        <Broadcasting page={false} />
     </div>
   )
 }

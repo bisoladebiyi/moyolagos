@@ -224,6 +224,25 @@ a {
   padding: 100px 120px;
   background: #fff;
   @include backgroundTransition;
+  .work-container{
+    .view-all {
+      all: unset;
+      display: flex;
+      justify-content: center;
+      margin: 60px auto 0;
+      padding: 5px 8px;
+      color: $col-blue;
+      border: 1px solid $col-blue;
+      border-radius: 3px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background: $col-blue;
+        color: #fff;
+      }
+    }
+  }
   .work-videos {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -244,7 +263,7 @@ a {
     }
   }
   .contentDev{
-    margin-top: 100px;
+    margin-top: 0px;
     .content{
       margin-top: 20px;
       display: grid;
@@ -264,10 +283,11 @@ a {
         max-height: 300px;
         cursor: pointer;
         p{
-          color: #888888;
+          color: #888888; 
           font-weight: 600;
         }
         &-link{
+          text-align: center;
           color: #66adf3;
           font-weight: 700;
           font-size: 20px;
@@ -289,7 +309,7 @@ a {
     }
   }
   .writings {
-    margin: 80px 0 120px;
+    margin: 80px 0 80px;
     @include backgroundTransition;
     background: #fff;
     .writing {
@@ -335,23 +355,7 @@ a {
         }
       }
     }
-    .view-all {
-      all: unset;
-      display: flex;
-      justify-content: center;
-      margin: 60px auto 0;
-      padding: 5px 8px;
-      color: $col-blue;
-      border: 1px solid $col-blue;
-      border-radius: 3px;
-      font-size: 15px;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-      &:hover {
-        background: $col-blue;
-        color: #fff;
-      }
-    }
+
   }
 }
 

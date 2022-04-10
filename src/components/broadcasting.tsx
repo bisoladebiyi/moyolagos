@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface Props {
   page: boolean;
 }
 const Broadcasting: React.FC<Props> = ({ page }) => {
   return (
-    <div>
+    <div className="work-container">
       <h2 className="works-title">Broadcasting and Media</h2>
       <div className="work-videos">
         <div>
@@ -60,6 +61,11 @@ const Broadcasting: React.FC<Props> = ({ page }) => {
                       </p>
                   </div></>}
       </div>
+      {!page && (
+        <Link to="/works">
+          <button className="view-all">View All Works</button>
+        </Link>
+      )}
     </div>
   );
 };

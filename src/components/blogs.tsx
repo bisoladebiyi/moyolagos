@@ -10,16 +10,11 @@ interface Props {
 
 const Blogs: React.FC<Props> = ({ theme, posts, page }) => {
   const [style, setStyle] = useState("");
-  const [btn, setBtn] = useState(true);
-
   useEffect(() => {
     if (theme === "dark") {
       setStyle("dark");
     } else {
       setStyle("");
-    }
-    if (page) {
-      setBtn(false);
     }
   }, [theme]);
 
@@ -61,11 +56,7 @@ const Blogs: React.FC<Props> = ({ theme, posts, page }) => {
               );
             })}
       </div>
-      {btn && (
-        <Link to="/works">
-          <button className="view-all">View All Works</button>
-        </Link>
-      )}
+  
     </div>
   );
 };

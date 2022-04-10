@@ -17,10 +17,9 @@ const WorksPage: React.FC<Props> = ({ theme, style, posts }) => {
   }, []);
   return (
     <div className={`works ${style}`} ref={worksRef}>
-      <Broadcasting page={true} />
-      <ContentDevelopment />
+          <ContentDevelopment />
       <Blogs posts={posts} page={true} theme={theme} />
-    
+      <Broadcasting page={true} />  
     </div>
   );
 };

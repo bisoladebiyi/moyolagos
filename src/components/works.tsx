@@ -1,10 +1,14 @@
+import { DocumentData, QuerySnapshot } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import Blogs from './blogs'
+import Broadcasting from './broadcasting'
+import ContentDevelopment from './contentDevelopment';
 // import vid from '/videos/aviation.mp4'
 interface Props {
-    theme:string
+    theme:string;
+    posts:QuerySnapshot<DocumentData> | undefined;
 }
-const Works:React.FC<Props> = ({theme}) => {
+const Works:React.FC<Props> = ({theme, posts}) => {
     const [style, setStyle] = useState("")
     useEffect(()=> {
         if(theme === "dark"){
@@ -15,35 +19,9 @@ const Works:React.FC<Props> = ({theme}) => {
     },[theme])
   return (
     <div className={`works ${style}`}>
-        <h1 className="works-title">Works</h1>
-        <div className="work-videos">
-            <div>
-            <video controls width={500} height="300" className='vid'>
-                <source src={"/videos/lekkileisure.mp4"} type='video/mp4' />
-            </video>
-            <p className='caption'>Scripted, voiced and presented by Moyosore Adebiyi</p>
-            </div>
-            <div>
-
-            <video controls width={500} height="300" className='vid'>
-                <source src={"/videos/onthespot.mp4"} type='video/mp4' />
-            </video>
-            <p className='caption'>Scripted and Voiced by Moyosore Adebiyi</p>
-            </div>
-          <div>
-          <video controls width={500} height="300" className='vid'>
-                <source src={"/videos/marriage.mp4"} type='video/mp4' />
-            </video>
-            <p className='caption'>Scripted and Voiced by Moyosore Adebiyi</p>
-          </div>
-            <div>
-            <video controls width={500} height="300" className='vid'>
-                <source src={"/videos/voiceoverchallenge.mp4"} type='video/mp4' />
-            </video>
-            <p className='caption'>Scripted and Voiced by Moyosore Adebiyi</p>
-            </div>
-           
-        </div>
+        <Broadcasting page={false} />
+        <ContentDevelopment />
+        <Blogs posts={posts} theme={theme} />
     </div>
   )
 }

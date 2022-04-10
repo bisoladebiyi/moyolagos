@@ -24,22 +24,22 @@ const Blogs: React.FC<Props> = ({ theme, posts, page }) => {
   }, [theme]);
 
   return (
-    <div className={`blogs ${style} ${page && "page"}`}>
-      <h1>Writings</h1>
-      <div className="blog">
+    <div className={`writings ${style} ${page && "page"}`}>
+      <h2>Writings / Articles</h2>
+      <div className="writing">
         {page
           ? posts?.docs.map((doc) => {
               return (
                 <Link to={`/writings/${doc.id}`}>
-                  <div key={doc.id} className="blog-card">
-                    <p className="blog-card-title">{doc.data().title}</p>
+                  <div key={doc.id} className="writing-card">
+                    <p className="writing-card-title">{doc.data().title}</p>
                     <p
-                      className="blog-card-description text"
+                      className="writing-card-description text"
                       dangerouslySetInnerHTML={{
                         __html: doc.data().description.slice(0, 400) + "...",
                       }}
                     ></p>
-                    <button className="blog-card-button">See More</button>
+                    <button className="writing-card-button">See More</button>
                   </div>
                 </Link>
               );
@@ -47,15 +47,15 @@ const Blogs: React.FC<Props> = ({ theme, posts, page }) => {
           : posts?.docs.slice(0, 3).map((doc) => {
               return (
                 <Link to={`/writings/${doc.id}`}>
-                  <div key={doc.id} className="blog-card">
-                    <p className="blog-card-title">{doc.data().title}</p>
+                  <div key={doc.id} className="writing-card">
+                    <p className="writing-card-title">{doc.data().title}</p>
                     <p
-                      className="blog-card-description text"
+                      className="writing-card-description text"
                       dangerouslySetInnerHTML={{
                         __html: doc.data().description.slice(0, 400) + "...",
                       }}
                     ></p>
-                    <button className="blog-card-button">See More</button>
+                    <button className="writing-card-button">See More</button>
                   </div>
                 </Link>
               );

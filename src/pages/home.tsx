@@ -1,16 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import About from "../components/about";
-import Blogs from "../components/blogs";
 import Footer from "../components/footer";
 import Home from "../components/home";
 import Works from "../components/works";
 import {
-  collection,
   DocumentData,
-  onSnapshot,
   QuerySnapshot,
 } from "firebase/firestore";
-import { db } from "../firebase";
 import Contact from "../components/contact";
 
 interface Props {
@@ -37,8 +33,7 @@ const HomePage: React.FC<Props> = ({ theme, setTheme, style, contactRef, posts }
       <div ref={scrollRef}>
         <About theme={theme} />
       </div>
-      <Works theme={theme} />
-      <Blogs theme={theme} posts={posts} />
+      <Works theme={theme} posts={posts} />
       <div ref={contactRef} id="contact">
       <Contact theme={theme} ref={contactRef} />
       </div>

@@ -439,6 +439,9 @@ a {
   .works .work-videos div:not(:last-child) {
     margin-bottom: 30px;
   }
+  .works .work-videos p {
+    text-align: left;
+  }
   .works .contentDev .content {
     grid-template-columns: 1fr 1fr;
   }

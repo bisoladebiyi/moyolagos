@@ -443,6 +443,9 @@ a {
       div:not(:last-child) {
         margin-bottom: 30px;
       }
+      p{
+        text-align: left;
+      }
     }
     .contentDev .content{
       grid-template-columns: 1fr 1fr;

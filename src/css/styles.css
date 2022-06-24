@@ -409,6 +409,7 @@ a {
   font-size: 18px !important;
   color: #9b9b9b !important;
   background: none !important;
+  line-height: 28px !important;
 }
 .blogDetails button {
   all: unset;
